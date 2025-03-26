@@ -25,12 +25,10 @@ A decentralized supply chain management system built on Ethereum, ensuring trans
 git clone https://github.com/UTKARSHJHA-2005/TranspFlow.git
 cd TranspFlow
 ```
-<br/>
 2) Install the required dependencies<br/>
 ``` 
 npm install
 ```
-<br/>
 3) Run the server<br/>
 ```
 npm run dev
