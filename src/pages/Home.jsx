@@ -1,4 +1,6 @@
+// The Landing page where user will land first.
 import React from 'react'
+// Components
 import Hero from '../components/Hero'
 import Feature from '../components/Feature'
 import Why from '../components/Why'

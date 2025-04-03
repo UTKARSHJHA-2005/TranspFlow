@@ -1,20 +1,8 @@
 import Web3 from "web3";
-import supply from "./supply.json"
+import supply from "../utils/supply.json" // Contract ABI
 
-const CONTRACT_ADDRESS = '0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B';
+const web3 = new Web3(window.ethereum);
+const contractAddress = "0x272497c9526021Ac17A8D402f585947C68dad136"; // Contract address
+const contract = new web3.eth.Contract(supply, contractAddress);
 
-const getWeb3 = async () => {
-    if (window.ethereum) {
-        const web3 = new Web3(window.ethereum);
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-        return web3;
-    } else {
-        console.error("MetaMask not found. Please install MetaMask.");
-    }
-};
-
-const getContract = async (web3) => {
-    return new web3.eth.Contract(supply, CONTRACT_ADDRESS);
-};
-
-export { getWeb3, getContract };
+export {web3,contract};

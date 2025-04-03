@@ -5,7 +5,7 @@
 			{
 				"indexed": false,
 				"internalType": "uint256",
-				"name": "productId",
+				"name": "id",
 				"type": "uint256"
 			},
 			{
@@ -22,6 +22,19 @@
 			}
 		],
 		"name": "ProductAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "ProductDeleted",
 		"type": "event"
 	},
 	{
@@ -48,7 +61,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "_billingImageHash",
+				"name": "_billingImageUrl",
 				"type": "string"
 			},
 			{
@@ -63,7 +76,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "_transportImageHash",
+				"name": "_transportImageUrl",
 				"type": "string"
 			},
 			{
@@ -81,83 +94,13 @@
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_productId",
+				"name": "_id",
 				"type": "uint256"
 			}
 		],
-		"name": "getProduct",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"components": [
-							{
-								"internalType": "string",
-								"name": "planningDate",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "manufacturingDate",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "manufacturerName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "billingImageHash",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "transportationDate",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "transporterName",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "transportImageHash",
-								"type": "string"
-							},
-							{
-								"internalType": "string",
-								"name": "distributionDate",
-								"type": "string"
-							}
-						],
-						"internalType": "struct SupplyChain.ProductDetails",
-						"name": "details",
-						"type": "tuple"
-					}
-				],
-				"internalType": "struct SupplyChain.Product",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
+		"name": "deleteProduct",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -194,56 +137,49 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "planningDate",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "manufacturingDate",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "manufacturerName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "billingImageUrl",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "transportationDate",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "transporterName",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "transportImageUrl",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "distributionDate",
+				"type": "string"
+			},
+			{
 				"internalType": "address",
 				"name": "owner",
 				"type": "address"
-			},
-			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "planningDate",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "manufacturingDate",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "manufacturerName",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "billingImageHash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "transportationDate",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "transporterName",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "transportImageHash",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "distributionDate",
-						"type": "string"
-					}
-				],
-				"internalType": "struct SupplyChain.ProductDetails",
-				"name": "details",
-				"type": "tuple"
 			}
 		],
 		"stateMutability": "view",
