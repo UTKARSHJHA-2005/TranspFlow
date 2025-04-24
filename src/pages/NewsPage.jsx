@@ -175,15 +175,15 @@ export default function LogisticsNews() {
                     Product Details
                   </li>
                 </Link>
-                <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
-                  Track Your Product
-                </li>
               </ul>
             </div>
           </li>
-          <li className="hover:text-blue-600 cursor-pointer py-2 border-b border-gray-100 transition-colors duration-200">
-            News
-          </li>
+          <Link to="/news">
+                <li className="hover:text-blue-600 cursor-pointer transition-colors duration-200 relative group">
+                  News
+                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </li>
+          </Link>
           <li className="py-2">
             <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
               <span>Login</span>
