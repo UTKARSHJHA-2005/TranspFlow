@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // Link
 import { web3, contract } from "../utils/web3"; // Web3 and Contract
 import AOS from "aos" // Animations
 import "aos/dist/aos.css";
-import { ChevronDown, Upload, Menu } from "lucide-react"; // Icons
+import { ChevronDown, Upload, Menu,X } from "lucide-react"; // Icons
 import { uploadToPinata } from "../utils/pinata"; // Pinata for Image
 import logo from "../assets/logo.png" // Logo
 import { toast, ToastContainer } from "react-toastify"; // Notifications
@@ -183,9 +183,6 @@ const AddProduct = () => {
                                         Product Details
                                     </li>
                                 </Link>
-                                <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
-                                    Track Your Product
-                                </li>
                             </ul>
                         </div>
                     </li>
