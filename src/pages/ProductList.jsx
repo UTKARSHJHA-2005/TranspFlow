@@ -4,7 +4,7 @@ import { web3, contract } from "../utils/web3"; // Web3 and Contract
 import { Link } from "react-router-dom"; // Link
 import AOS from "aos" // Animations
 import "aos/dist/aos.css";
-import { ChevronDown, Trash2, Eye, Calendar, User, Truck, Box, Menu } from "lucide-react"; // Icons
+import { ChevronDown, Trash2, Eye, Calendar, User, Truck, Box, Menu,X } from "lucide-react"; // Icons
 import { toast, ToastContainer } from "react-toastify"; // Notifications
 import logo from "../assets/logo.png"; // Logo
 
