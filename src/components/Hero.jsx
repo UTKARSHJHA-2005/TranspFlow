@@ -170,7 +170,7 @@ export default function Hero() {
                     </p>
                     <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center md:justify-start">
                         <Link to="/product">
-                            <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:translate-y-0.5 transition duration-300 text-base font-medium flex items-center justify-center">
+                            <button className="bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:translate-y-0.5 transition duration-300 text-base font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                                 Lets Go
                             </button>
                         </Link>
