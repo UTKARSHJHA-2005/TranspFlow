@@ -1,7 +1,7 @@
 # TranspFlow - Blockchain Based Supply Chain Management System
 <br/>
 TranspFlow is a transparent and decentralized supply chain management platform built on Ethereum. It leverages blockchain technology to ensure traceability, authenticity, and efficiency across every stage of the supply chain. By integrating smart contracts and IPFS for secure data and document handling, TranspFlow empowers businesses to track products in real time and build trust with stakeholders through tamper-proof records.<br/>
-✨ <strong><i>Features</i></strong>
+✨ <strong><i>Features</i></strong><br/>
 ✅ Immutable Record-Keeping<br/>
 ✅ Real-Time Product Tracking<br/>
 ✅ Smart Contract Automation<br/>
@@ -9,7 +9,7 @@ TranspFlow is a transparent and decentralized supply chain management platform b
 ✅ Transparent Audit Trail<br/>
 ✅ Web3 Integration<br/>
 <br/>
-🚀 <strong><i>Tech Stack</i></strong>
+🚀 <strong><i>Tech Stack</i></strong><br/>
 Frontend: React.js.<br/>
 State Management: React Hooks.<br/>
 Blockchain:Ethereum,Solidity,Web3.js.<br/>
