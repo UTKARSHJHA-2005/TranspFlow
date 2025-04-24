@@ -85,7 +85,7 @@ export default function LogisticsNews() {
     : newsData.filter(news => news.category === activeCategory);
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
+    <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen overflow-x-hidden">
       {/* Navbar */}
       <nav className="flex justify-between items-center px-4 sm:px-8 lg:px-16 py-4 bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
         <div className="flex items-center">
@@ -134,26 +134,72 @@ export default function LogisticsNews() {
         </ul>
         <div className="flex items-center space-x-5">
           <Link to="/contact">
-          <button className="hidden md:flex items-center bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg hover:translate-y-0.5 transition duration-300 text-sm font-medium">
-            Contact Us
-            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
+            <button className="hidden md:flex items-center bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg hover:translate-y-0.5 transition duration-300 text-sm font-medium">
+              Contact Us
+              <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
           </Link>
           {/* Mobile Menu Button */}
           <button className="md:hidden text-gray-700 bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200"
-          onClick={toggleMobileMenu}>
+            onClick={toggleMobileMenu}>
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
       </nav>
+      {/* Mobile Menu */}
+      <div className={`md:hidden bg-white shadow-lg py-4 px-6 absolute w-full z-40 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
+        <ul className="space-y-4 text-gray-700">
+          <Link to="/">
+            <li className="hover:text-blue-600 cursor-pointer py-2 border-b border-gray-100 transition-colors duration-200">
+              Home
+            </li>
+          </Link>
+          <li className="border-b border-gray-100">
+            <div className="flex items-center justify-between hover:text-blue-600 cursor-pointer py-2 transition-colors duration-200"
+              onClick={toggleDropdown}>
+              <span>Products</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+            </div>
+            <div
+              className={`pl-4 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100 mt-2 mb-2" : "max-h-0 opacity-0"}`}>
+              <ul className="border-l-2 border-blue-500 space-y-3">
+                <Link to="/product">
+                  <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                    Add Product
+                  </li>
+                </Link>
+                <Link to="/list">
+                  <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                    Product Details
+                  </li>
+                </Link>
+                <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                  Track Your Product
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="hover:text-blue-600 cursor-pointer py-2 border-b border-gray-100 transition-colors duration-200">
+            News
+          </li>
+          <li className="py-2">
+            <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+              <span>Login</span>
+              <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
       {/* Category Filter */}
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-wrap justify-center gap-2 mb-8" data-aos="fade-up" data-aos-delay="200">
           {categories.map(category => (
             <button key={category} onClick={() => setActiveCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
                 ? "bg-blue-600 text-white shadow-lg"
                 : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}>
@@ -166,8 +212,8 @@ export default function LogisticsNews() {
       <section className="container mx-auto px-4 mb-16">
         <div className="relative rounded-xl overflow-hidden shadow-2xl" data-aos="zoom-in">
           <img
-          src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-425106,resizemode-75,msid-102297460/small-biz/trade/exports/insights/shipping-companies-are-on-a-spending-spree.jpg"
-          alt="Featured News" className="w-full h-[300px] sm:h-[400px] object-cover"/>
+            src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-425106,resizemode-75,msid-102297460/small-biz/trade/exports/insights/shipping-companies-are-on-a-spending-spree.jpg"
+            alt="Featured News" className="w-full h-[300px] sm:h-[400px] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex flex-col justify-end p-6 sm:p-10">
             <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm inline-block w-fit mb-4">
               Featured Story
@@ -179,7 +225,7 @@ export default function LogisticsNews() {
               Discover how AI, blockchain, and IoT are transforming international logistics networks and reshaping the future of global trade and supply chains.
             </p>
             <a href="#"
-            className="inline-flex items-center px-5 py-2.5 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition shadow-lg w-fit">
+              className="inline-flex items-center px-5 py-2.5 bg-white text-blue-900 rounded-lg hover:bg-blue-50 transition shadow-lg w-fit">
               Read Full Story
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -209,7 +255,7 @@ export default function LogisticsNews() {
               ) : (
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 h-full flex flex-col">
                   <div className="relative">
-                    <img src={news.image} alt={news.title} className="w-full h-48 object-cover transition duration-300 hover:scale-105"/>
+                    <img src={news.image} alt={news.title} className="w-full h-48 object-cover transition duration-300 hover:scale-105" />
                     <span className="absolute top-3 right-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs">
                       {news.category}
                     </span>
@@ -221,11 +267,11 @@ export default function LogisticsNews() {
                     <p className="text-gray-600 mb-4 flex-grow">
                       {news.description}
                     </p>
-                    <a href={news.link} target="_blank" rel="noopener noreferrer" 
-                    className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 transition group">
+                    <a href={news.link} target="_blank" rel="noopener noreferrer"
+                      className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 transition group">
                       Read More
                       <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor"
-                      viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                       </svg>
                     </a>

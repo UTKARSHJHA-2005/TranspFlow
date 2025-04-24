@@ -93,7 +93,7 @@ const AddProduct = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 overflow-x-hidden">
             {/* Responsive Navbar */}
             <nav className="flex justify-between items-center px-4 sm:px-8 lg:px-16 py-4 bg-white shadow-md sticky top-0 z-50 transition-all duration-300">
                 <div className="flex items-center">
@@ -156,6 +156,52 @@ const AddProduct = () => {
                     </button>
                 </div>
             </nav>
+            {/* Mobile Menu */}
+            <div className={`md:hidden bg-white shadow-lg py-4 px-6 absolute w-full z-40 transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}>
+                <ul className="space-y-4 text-gray-700">
+                    <Link to="/">
+                        <li className="hover:text-blue-600 cursor-pointer py-2 border-b border-gray-100 transition-colors duration-200">
+                            Home
+                        </li>
+                    </Link>
+                    <li className="border-b border-gray-100">
+                        <div className="flex items-center justify-between hover:text-blue-600 cursor-pointer py-2 transition-colors duration-200"
+                            onClick={toggleDropdown}>
+                            <span>Products</span>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                        </div>
+                        <div
+                            className={`pl-4 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-40 opacity-100 mt-2 mb-2" : "max-h-0 opacity-0"}`}>
+                            <ul className="border-l-2 border-blue-500 space-y-3">
+                                <Link to="/product">
+                                    <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                                        Add Product
+                                    </li>
+                                </Link>
+                                <Link to="/list">
+                                    <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                                        Product Details
+                                    </li>
+                                </Link>
+                                <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
+                                    Track Your Product
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li className="hover:text-blue-600 cursor-pointer py-2 border-b border-gray-100 transition-colors duration-200">
+                        News
+                    </li>
+                    <li className="py-2">
+                        <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+                            <span>Login</span>
+                            <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
             {/* Main Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <div data-aos="flip-up" className="bg-white shadow-md rounded-lg overflow-hidden">

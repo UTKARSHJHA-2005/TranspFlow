@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
         <Hero/>
         <Why/>
         <Feature/>

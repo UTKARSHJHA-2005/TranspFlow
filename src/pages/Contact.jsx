@@ -80,7 +80,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-br from-gray-900 to-gray-800 py-16">
+    <section className="bg-gradient-to-br from-gray-900 to-gray-800 py-16 overflow-x-hidden">
       <div className="max-w-6xl px-4 mx-auto grid lg:grid-cols-2 gap-12 relative">
         <div data-aos="fade-right" data-aos-duration="1000">
           <h2 className="text-5xl font-bold text-white">

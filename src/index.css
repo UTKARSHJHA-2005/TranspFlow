@@ -36,3 +36,7 @@
     background: #357ABD;
     /* Darker blue */
 }
+
+body {
+    overflow-x: hidden;
+}
