@@ -132,9 +132,6 @@ export default function Hero() {
                                         Product Details
                                     </li>
                                 </Link>
-                                <li className="hover:text-blue-600 cursor-pointer py-1 pl-4 transition-colors duration-200">
-                                    Track Your Product
-                                </li>
                             </ul>
                         </div>
                     </li>
