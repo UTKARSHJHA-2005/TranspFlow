@@ -4,7 +4,7 @@ import { web3, contract } from "../utils/web3"; // Web3 and Contract
 import { Link } from "react-router-dom"; // Link
 import AOS from "aos" // Animations
 import "aos/dist/aos.css";
-import { ChevronDown, Trash2, Eye, Calendar, User, Truck, Box, Menu,X } from "lucide-react"; // Icons
+import { ChevronDown, Trash2, Eye, Calendar, User, Truck, Box, Menu, X } from "lucide-react"; // Icons
 import { toast, ToastContainer } from "react-toastify"; // Notifications
 import logo from "../assets/logo.png"; // Logo
 
@@ -51,6 +51,9 @@ const ViewProducts = () => {
                     const product = await contract.methods.products(i).call();
                     items.push(product);
                 }
+                const networkId = await web3.eth.net.getId();
+
+                console.log("Network ID:", networkId);
                 setProducts(items);
             } catch (error) {
                 toast.error("Failed to fetch products: " + error.message);
@@ -175,12 +178,12 @@ const ViewProducts = () => {
                     </Link>
                     <li className="py-2">
                         <Link to="/contact">
-                         <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
-                             <span>Contact Us</span>
-                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                             </svg>
-                         </button>
+                            <button className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center justify-center">
+                                <span>Contact Us</span>
+                                <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14 16L18 12M18 12L14 8M18 12H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
                         </Link>
                     </li>
                 </ul>
