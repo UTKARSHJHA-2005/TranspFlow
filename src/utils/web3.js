@@ -1,8 +1,21 @@
 import Web3 from "web3";
-import supply from "../utils/supply.json" // Contract ABI
+import supply from "../utils/supply.json";
 
-const web3 = new Web3(window.ethereum);
-const contractAddress = "0x272497c9526021Ac17A8D402f585947C68dad136"; // Contract address
-const contract = new web3.eth.Contract(supply, contractAddress);
+let web3;
 
-export {web3,contract};
+if (typeof window !== "undefined" && window.ethereum) {
+    web3 = new Web3(window.ethereum);
+} else {
+    web3 = new Web3(
+        "https://rpc.sepolia.org"
+    );
+}
+
+const contractAddress = "0x272497c9526021Ac17A8D402f585947C68dad136";
+
+const contract = new web3.eth.Contract(
+    supply,
+    contractAddress
+);
+
+export { web3, contract };
